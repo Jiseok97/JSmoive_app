@@ -6,8 +6,18 @@ class App extends react.Component {
   state = {
     count: 0,
   };
-  add = () => {};
-  minus = () => {};
+  add = () => {
+    // = this.setState({ count: this.state.count + 1 });
+    // setState 호출할 때 마다 react는 새로운 state와 함께 render function을 호출
+    this.setState((current) => {
+      count: current.count + 1;
+    });
+  };
+  minus = () => {
+    this.setState((current) => {
+      count: current.count - 1;
+    });
+  };
   render() {
     // react.component는 retrun 을 사용 x
     return (
