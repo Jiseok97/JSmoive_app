@@ -9,7 +9,9 @@ class App extends react.Component {
     movies: [],
   };
   getMoives = async () => {
-    const movies = await axios.get("https://yts.mx/api/v2/list_movies.json");
+    // async는 이 함수가 비동기라는 것을 선언 await를 기다려야 한다.
+    // awiat 뒤에 있는 axios가 끝날 때 까지 기다려야 한다.
+    const movies = await axios.get("https://yts.mx/api/v2/list_movies.json"); // yts.lt 에서 API 가져옴
   };
   componentDidMount() {
     // setTimeout(() => {
