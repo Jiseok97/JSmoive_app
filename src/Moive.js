@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./Movie.css";
 // PropTypes를 통해 props 체크
 
 function Movie({ year, title, summary, poster }) {
