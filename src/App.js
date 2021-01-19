@@ -13,12 +13,12 @@ class App extends react.Component {
     const {
       // 가져온 요소 중 data 안에 data 안에 movies를 가져옴
       data: {
-        data: { moives },
+        data: { movies },
       },
     } = await axios.get(
       "https://yts-proxy.now.sh/list_movies.json?sort_by=rating"
     ); // yts.lt 에서 API 가져옴
-    this.setState({ moives, isLoading: false }); // state movies : axios moives
+    this.setState({ movies, isLoading: false });
   };
   componentDidMount() {
     this.getMoives();
@@ -26,10 +26,14 @@ class App extends react.Component {
   render() {
     const { isLoading, movies } = this.state; // isLoading을 호출할 때, 앞에 this.state 생략을 위함
     return (
-      <div>
-        {isLoading
-          ? "Loading..."
-          : movies.map((movie) => (
+      <section class="container">
+        {isLoading ? (
+          <div class="loader">
+            <span class="loader__text">Loading...</span>
+          </div>
+        ) : (
+          <div class="movies">
+            {movies.map((movie) => (
               <Movie
                 key={movie.id}
                 id={movie.id}
@@ -39,7 +43,9 @@ class App extends react.Component {
                 poster={movie.medium_cover_image}
               />
             ))}
-      </div>
+          </div>
+        )}
+      </section>
     );
   }
 }
