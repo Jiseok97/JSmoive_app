@@ -27,13 +27,13 @@ class App extends react.Component {
   render() {
     const { isLoading, movies } = this.state; // isLoading을 호출할 때, 앞에 this.state 생략을 위함
     return (
-      <section class="container">
+      <section className="container">
         {isLoading ? (
-          <div class="loader">
-            <span class="loader__text">Loading...</span>
+          <div className="loader">
+            <span className="loader__text">Loading...</span>
           </div>
         ) : (
-          <div class="movies">
+          <div className="movies">
             {movies.map((movie) => (
               <Movie
                 key={movie.id}
@@ -42,6 +42,7 @@ class App extends react.Component {
                 title={movie.title}
                 summary={movie.summary}
                 poster={movie.medium_cover_image}
+                genres={movie.genres}
               />
             ))}
           </div>
