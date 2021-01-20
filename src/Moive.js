@@ -6,7 +6,7 @@ import "./Movie.css";
 function Movie({ year, title, summary, poster, genres }) {
   return (
     // 각 요소 안에 style로 css에서 안하고 직접 css를 처리할 수 있음
-    <div classNameName="movies__movie">
+    <div className="movie">
       <img src={poster} alt={title} title={title} />
       <div className="movie__data">
         <h3 className="movie__title">{title}</h3>
