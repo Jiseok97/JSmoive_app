@@ -18,7 +18,8 @@ function Movie({ year, title, summary, poster, genres }) {
             </li>
           ))}
         </ul>
-        <p className="movie__summary">{summary}</p>
+        {/* array.slice -> 시작점부터 끝점까지만 보여지게 하기 */}
+        <p className="movie__summary">{summary.slice(0, 140)}...</p>
       </div>
     </div>
   );
