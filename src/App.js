@@ -6,12 +6,9 @@ import About from "./routes/About";
 function App() {
   return (
     <HashRouter>
-      <Route path="/">
-        <h1>Home</h1>
-      </Route>
-      <Route paht="/about">
-        <h1>About</h1>
-      </Route>
+      <Route path="/" exact={true} component={Home} />{" "}
+      {/* excat=ture는 "/"일 때만 route 시킴*/}
+      <Route path="/about" component={About} />
     </HashRouter>
   );
 }
