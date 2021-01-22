@@ -1,4 +1,5 @@
 import React from "react";
+import "./Detail.css";
 
 class Detail extends React.Component {
   componentDidMount() {
@@ -14,7 +15,7 @@ class Detail extends React.Component {
     const { location } = this.props;
     if (location.state) {
       return (
-        <div>
+        <div className="detail">
           <img
             src={location.state.poster}
             alt={location.state.title}
