@@ -1,5 +1,5 @@
 .nav {
-  position: static;
+  position: fixed;
   align-items: inherit;
   top: 0px;
   left: 10px;
